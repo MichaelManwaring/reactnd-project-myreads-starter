@@ -13,8 +13,7 @@ class MainPage extends Component{
 				// add 3 bookshelves
 				</div>
 				<div className="open-search">
-					// make into Link
-					<a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+					<Link to='/search'>Add a book</Link>
 				</div>
 			</div>
 		)

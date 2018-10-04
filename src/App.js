@@ -22,14 +22,12 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        {this.state.showSearchPage ? (
-          <SearchPage/>
-        ) : (
+        <Route exact path='/' render={()=>(
           <MainPage/>
-        )}
-        // only here to make viewing search possible:
-        <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-
+        )}/>
+        <Route exact path='/search' render={()=>(
+          <SearchPage/>
+        )}/>
       </div>
     )
   }
