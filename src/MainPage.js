@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Shelf from './Shelf'
 
 class MainPage extends Component{
 
@@ -10,7 +11,9 @@ class MainPage extends Component{
 					<h1>MyReads</h1>
 				</div>
 				<div className="list-books-content">
-				// add 3 bookshelves
+					<Shelf name='Currently Reading' books={this.props.books.filter((book) => book.shelf === 'currentlyReading')}/>
+					<Shelf name='Want to Read' books={this.props.books.filter((book) => book.shelf === 'wantToRead')}/>
+					<Shelf name='Read' books={this.props.books.filter((book) => book.shelf === 'read')}/>
 				</div>
 				<div className="open-search">
 					<Link to='/search'>Add a book</Link>
